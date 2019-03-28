@@ -1,0 +1,12 @@
+Aide de Memoreasy
+
+Sommaire : 
+1 - Fonctionnement
+2 - Modes d'apprentissage
+3 - Chapitres proposés
+4 - Statistiques
+
+
+1 - Fonctionnement
+
+Memoreasy est un logiciel d'apprentissage par technique de flashcards, cartes mémoires pour retenir plus facilement un énoncé.
