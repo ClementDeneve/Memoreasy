@@ -1,5 +1,5 @@
 # Memoreasy - Description 
-Memoreasy est un logiciel de mémorisation de cartes mémoires (flashcards) écrit en python 3.X, utilisant la Programmation Orentientée Objet (POO). Ce projet m'a permis de me familiariser avec la programmation évènementielle en python, grâce à une interface interactive.
+Memoreasy est un logiciel de mémorisation de cartes mémoires (flashcards) écrit en python 3.X, utilisant la Programmation Orientée Objet (POO). Ce projet m'a permis de me familiariser avec la programmation évènementielle en python, grâce à une interface interactive.
  
 Modules utilisés : 
  - tkinter pour l'interface graphique
