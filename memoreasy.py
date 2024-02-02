@@ -57,11 +57,11 @@ class Memoreasy():
         police = Font(size = 10)
         
         #Création des onglets
-        fichier = tk.Menu(menuBar, tearoff=0, relief=FLAT, bg="#f7f7f7", fg="#727272", activebackground="#2a8eff", activeborderwidth = 0, border = 0, activeforeground = "#f7f7f7")
-        statist = tk.Menu(menuBar, tearoff=0, relief=FLAT, bg="#f7f7f7", fg="#727272", activebackground="#2a8eff", activeborderwidth = 0, border = 0, activeforeground = "#f7f7f7")
-        paramet = tk.Menu(menuBar, tearoff=0, relief=FLAT, bg="#f7f7f7", fg="#727272", activebackground="#2a8eff", activeborderwidth = 0, border = 0, activeforeground = "#f7f7f7")
-        chapitres = tk.Menu(menuBar, tearoff=0, relief=FLAT, bg="#f7f7f7", fg="#727272", activebackground="#2a8eff", activeborderwidth = 0, border = 0, activeforeground = "#f7f7f7")
-        aidmenu = tk.Menu(menuBar, tearoff=0, relief=FLAT, bg="#f7f7f7", fg="#727272", activebackground="#2a8eff", activeborderwidth = 0, border = 0, activeforeground = "#f7f7f7")
+        fichier = tk.Menu(menuBar, tearoff=0, relief=tk.FLAT, bg="#f7f7f7", fg="#727272", activebackground="#2a8eff", activeborderwidth = 0, border = 0, activeforeground = "#f7f7f7")
+        statist = tk.Menu(menuBar, tearoff=0, relief=tk.FLAT, bg="#f7f7f7", fg="#727272", activebackground="#2a8eff", activeborderwidth = 0, border = 0, activeforeground = "#f7f7f7")
+        paramet = tk.Menu(menuBar, tearoff=0, relief=tk.FLAT, bg="#f7f7f7", fg="#727272", activebackground="#2a8eff", activeborderwidth = 0, border = 0, activeforeground = "#f7f7f7")
+        chapitres = tk.Menu(menuBar, tearoff=0, relief=tk.FLAT, bg="#f7f7f7", fg="#727272", activebackground="#2a8eff", activeborderwidth = 0, border = 0, activeforeground = "#f7f7f7")
+        aidmenu = tk.Menu(menuBar, tearoff=0, relief=tk.FLAT, bg="#f7f7f7", fg="#727272", activebackground="#2a8eff", activeborderwidth = 0, border = 0, activeforeground = "#f7f7f7")
         
         #Création des sous menus
 
@@ -124,13 +124,13 @@ class Memoreasy():
         #Adaptation des images pour qu'elle soit dans la fenêtre
         self.ratio = 700/ float(imagelogo.size[0])
         self.hsize=int((float(imagelogo.size[1])*float(self.ratio)))
-        self.image = imagelogo.resize((700,self.hsize),PIL.Image.ANTIALIAS)
+        self.image = imagelogo.resize((700,self.hsize),PIL.Image.LANCZOS)
 
         #Creation de la matrice PIL
         self.photo = PIL.ImageTk.PhotoImage(imagelogo)
         self.photo.image = self.image
         self.imageWidth, self.imageHeight = imagelogo.size
-        self.canvasPrincipal = Canvas(self.framePrincipal,height=self.imageHeight ,width=self.imageWidth, bg='white', border=0) 
+        self.canvasPrincipal = tk.Canvas(self.framePrincipal,height=self.imageHeight ,width=self.imageWidth, bg='white', border=0) 
         self.canvasPrincipal.create_image(self.imageWidth/2,self.imageHeight/2,image=self.photo)
         self.canvasPrincipal.grid(row=0, column=0)
         self.frameBoutons.grid(row=1, column=0, padx=5, pady=5)
@@ -192,7 +192,7 @@ class Memoreasy():
         self.imageWidth, self.imageHeight = self.image.size
 
         #Création de la nouvelle image
-        self.canvasPrincipal = Canvas(self.framePrincipal,height=self.imageHeight ,width=self.imageWidth, bg='white') 
+        self.canvasPrincipal = tk.Canvas(self.framePrincipal,height=self.imageHeight ,width=self.imageWidth, bg='white') 
         self.canvasPrincipal.create_image(self.imageWidth/2,self.imageHeight/2,image=self.photo)
         self.canvasPrincipal.grid(row=0, column=0)
     def affichage_page_finDuDeck(self):
@@ -235,12 +235,12 @@ class Memoreasy():
 
 
         #Creation de la scrollbar
-        scrollbar = Scrollbar(self.framePrincipal, width=30)
-        textWidget = Text(self.framePrincipal)
-        framechoix = Frame(self.framePrincipal, )
+        scrollbar = tk.Scrollbar(self.framePrincipal, width=30)
+        textWidget = tk.Text(self.framePrincipal)
+        framechoix = tk.Frame(self.framePrincipal, )
         scrollbar.config(command=textWidget.yview)
         textWidget.config(yscrollcommand=scrollbar.set)
-        textWidget.insert(END, texte)
+        textWidget.insert(tk.END, texte)
 
         #Affichage dans la grille
         scrollbar.grid(row=0, column=2, sticky='ns' )
